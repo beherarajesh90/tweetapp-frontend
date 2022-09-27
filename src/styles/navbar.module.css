@@ -1,0 +1,35 @@
+.navBar {
+  width: 100vw;
+  height: 60px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  position: fixed;
+  top: 0%;
+  box-shadow: -2px 0px 3px 2px #03a7f4;
+  justify-content: space-between;
+}
+.logo {
+  margin: 10px 0px 0px 100px;
+  color: #03a9f4;
+
+  font-size: 2rem;
+  font-family: cursive;
+  display: flex;
+}
+.menuItems {
+  list-style: none;
+  display: flex;
+  margin-right: 30px;
+  column-gap: 25px;
+}
+
+.menuItem {
+  font-size: 1.25rem;
+  color: #03a9f4;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  color: white;
+}

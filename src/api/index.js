@@ -71,7 +71,7 @@ const registerRequest = (
 const getAllTweetsRequest = () => {
   return customFetch(API_URLS.allTweets(), {
     method: "GET",
-    headers: { "Content-Type": "application/json",'X-Requested-With': 'XMLHttpRequest' },
+//     headers: { "Content-Type": "application/json",'X-Requested-With': 'XMLHttpRequest' },
   });
 };
 

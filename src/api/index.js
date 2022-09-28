@@ -5,15 +5,16 @@ import {
 } from "../utils/index";
 
 const customFetch = async (url, customConfig) => {
-  //   const config = {
-  //     ...customConfig,
-  //     headers: {
-  //       ...customConfig.headers,
-  //     },
-  //   };
-
+    const config = {
+      ...customConfig,
+      headers: {
+        ...customConfig.headers,
+        "X-Requested-With", "XMLHttpRequest"
+      },
+    };
+  
   try {
-    const response = await fetch(url, customConfig);
+    const response = await fetch(url, config);
 
     const data = await response.json();
     // console.log(response);

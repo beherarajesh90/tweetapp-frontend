@@ -9,7 +9,7 @@ const customFetch = async (url, customConfig) => {
       ...customConfig,
       headers: {
         ...customConfig.headers,
-        "X-Requested-With", "XMLHttpRequest"
+        "X-Requested-With":"XMLHttpRequest"
       },
     };
   

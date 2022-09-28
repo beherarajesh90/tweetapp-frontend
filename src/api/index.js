@@ -5,16 +5,16 @@ import {
 } from "../utils/index";
 
 const customFetch = async (url, customConfig) => {
-    const config = {
-      ...customConfig,
-      headers: {
-        ...customConfig.headers,
-        "X-Requested-With":"XMLHttpRequest"
-      },
-    };
+//     const config = {
+//       ...customConfig,
+//       headers: {
+//         ...customConfig.headers,
+//         "X-Requested-With":"XMLHttpRequest"
+//       },
+//     };
   
   try {
-    const response = await fetch(url, config);
+    const response = await fetch(url, customConfig);
 
     const data = await response.json();
     // console.log(response);
@@ -71,7 +71,7 @@ const registerRequest = (
 const getAllTweetsRequest = () => {
   return customFetch(API_URLS.allTweets(), {
     method: "GET",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json",'X-Requested-With': 'XMLHttpRequest' },
   });
 };
 

@@ -99,9 +99,12 @@ export const useProvideTweets = () => {
   const [loading, setLoading] = useState(true);
   const [tweets, setTweets] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const auth = useAuth();
   useEffect(() => {
-    getTweets();
-  }, [refresh]);
+    if(auth.user){
+      getTweets();
+    }
+  }, [refresh,auth]);
 
   const getTweets = async () => {
     const res = await getAllTweetsRequest();

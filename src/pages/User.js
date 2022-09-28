@@ -8,6 +8,7 @@ import styles from "../styles/user.module.css";
 function User() {
   const [users, setUsers] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [loading,setLoading] = useState(true);
   const auth = useAuth();
   useEffect(() => {
     if (!searchText) {
@@ -18,6 +19,7 @@ function User() {
   const getAllUsers = async () => {
     const res = await allUsersRequest();
     if (res.success) {
+      setLoading(false);
       setUsers(res.data.usersList);
     }
   };
